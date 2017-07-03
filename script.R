@@ -1,0 +1,10 @@
+setEPS()
+postscript("run-comparisons(white).eps")
+plot(cluster_data, type="o", col="green", xaxt='n', xlab="Number of Processes", yaxt='n', ylab="Run Time (s)", fg="white", bg=NA, main="Run Time Comparison",cex.main=2, col.main="white", col.lab="white", lwd=4, lty=4, pch=0, xlim=c(1,16), ylim=c(1,90))
+axis(2,col="white", at=seq(0, 90, by = 5), las =2, col.ticks="white", col.axis="white")
+axis(1, col="white", at=c(2,4,8,16), las =1, col.axis="white")
+legend(10, 30, c("Cluster", "Desktop", "Raspberry Pi"), col=c("green", "orange", "red"), lwd=4,lty=4,text.col="white", box.col="white")
+lines(desktop_data, col="orange", lwd=4, lty=4, pch=0, type="o")
+lines(single_node_data, col="red", lwd=4, lty=4, pch=0, type="o")
+dev.off()
+
