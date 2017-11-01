@@ -1,0 +1,8 @@
+png("speedup_comparison.png")
+plot(node_speedup, type="o", col="forestgreen", xaxt='n', yaxt='n', xlab="Number of processes", ylab="Speedup", main="Speedup Comparison: 1000x1000 matrix multiplication", lwd=4, lty=1, pch=0, xlim=c(1,16), ylim=c(1,7))
+axis(2, at=seq(1,7,by=1), las=2)
+axis(1, at=c(1,2,4,8,16), las=1)
+grid(10,10,col="lightgray",lty="dotted")
+lines(cluster_speedup, col="firebrick3", type="o", lwd=4, lty=1, pch=0)
+legend(1,7, c("R-Pi Cluster", "Single R-Pi"), col=c("firebrick3", "forestgreen"), lwd=4, lty=1, pch=0)
+dev.off()

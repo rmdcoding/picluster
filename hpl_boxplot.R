@@ -1,0 +1,5 @@
+png("hpl_boxplot.png")
+boxplot(hpl_gflops, col="firebrick3", ylab="GFLOPS", main="HPL Benchmark on R-Pi Cluster")
+grid(10,10)
+boxplot(hpl_gflops, col="firebrick3", ylab="GFLOPS", main="HPL Benchmark on R-Pi Cluster", add=TRUE)
+dev.off()
